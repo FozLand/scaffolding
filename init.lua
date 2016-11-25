@@ -102,3 +102,15 @@ if dye then
 		})
 	end
 end
+
+-- Handle removal of obsolete nodes.
+minetest.register_lbm({
+	name = 'scaffolding:remove_scaffolding_darkgrey',
+	nodenames = {'scaffolding:scaffolding_darkgrey'},
+	action = function(pos, node)
+		minetest.set_node(pos, {name = 'scaffolding:scaffolding_dark_grey'})
+	end,
+})
+
+minetest.register_alias('scaffolding:scaffolding_darkgrey',
+	'scaffolding:scaffolding_dark_grey')
